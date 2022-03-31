@@ -1,0 +1,44 @@
+<div linespace2></div>
+<ion-content>
+  <div class="center">
+    <app-logo></app-logo>
+    <h1>Create Account</h1>
+  </div> 
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Firstname</ion-label>
+  <ion-input type="text" [(ngModel)]="newUser.firstname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Lastname</ion-label>
+  <ion-input type="text" [(ngModel)]="newUser.lastname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+  <ion-input type="text" [(ngModel)]="newUser.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+  <ion-input type="password" [(ngModel)]="newUser.password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Confirm Password</ion-label>
+  <ion-input type="password" [(ngModel)]="newUser.confirmPassword"></ion-input>
+  </ion-item>
+
+  <div linespace></div>
+  <ion-button class="register" expand="block" color='dark' fill="solid" shape='round' (click)="register()">
+    <ion-text color="light">Register</ion-text>
+  </ion-button>
+
+  <ion-label class="ion-text-center">
+    Already have an account?<a routerLink='/login'>Sign In</a>
+  </ion-label>
+</ion-list>
+</ion-content>
+
