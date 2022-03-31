@@ -1,0 +1,59 @@
+
+  <ion-content>
+    <ion-grid>
+      <ion-searchbar class="ion-padding"></ion-searchbar>
+  
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <img src="../assets/images/relax.png"/>
+            <ion-button color='light' fill='clear' ></ion-button>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size="6">
+          <ion-card>
+            <img src="../assets/images/Smiley.png"/>
+            <ion-button color='light' fill='clear' ></ion-button>
+          </ion-card>
+        </ion-col>
+
+        
+        <ion-col size="6">
+            <ion-card>
+                <img src="../assets/images/sleep.png"/>
+              <ion-button color='light' fill='clear' ></ion-button>
+            </ion-card>
+          </ion-col>
+  
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+  <ion-toolbar id="miniPlayer">
+    <ion-item>
+      <ion-thumbnail slot="start" (click)="maximize()">
+        <img src="../assets/images/Smiley.png"/>
+      </ion-thumbnail>
+      <ion-label (click)="maximize()">
+        <h2>Believer</h2>
+        <p>Imagine Dragons</p>
+      </ion-label>
+  
+      <ion-button color="danger" (click)="play()" mode="ios" fill="clear" *ngIf="!isPlaying">
+        <ion-icon name="play" style="font-size: x-large;"></ion-icon>
+      </ion-button>
+  
+      <ion-button color="danger" (click)="pause()" mode="ios" fill="clear" *ngIf="!isPlaying">
+        <ion-icon name="pause" style="font-size: x-large;"></ion-icon>
+      </ion-button>
+  
+      <ion-button color="danger" (click)="cancel()" mode="ios" fill="clear">
+        <ion-icon name="close" style="font-size: x-large;"></ion-icon>
+      </ion-button>
+    </ion-item>
+  
+    <ion-progress-bar value="{{progress}}"></ion-progress-bar>
+  </ion-toolbar>
+  
+  
