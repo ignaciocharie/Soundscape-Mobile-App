@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
     this.authService.login(this.credentials).then((res: any) => {
       if (!res.code) {
         this.presentToast('Login Success');
-        this.router.navigate(['/home/journal'])
+        this.router.navigate(['/home/music'])
       }
     },
       (err) => {
