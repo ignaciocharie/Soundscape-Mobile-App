@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebaseConfig: {
-    apiKey: "AIzaSyCAp2Gg9iQ_0FxWPTpv0TU8oWW-AGzBLk0",
-    authDomain: "careing-mobileapp.firebaseapp.com",
-    projectId: "careing-mobileapp",
-    storageBucket: "careing-mobileapp.appspot.com",
-    messagingSenderId: "1084287323355",
-    appId: "1:1084287323355:web:d03b870bd8bde0c5de10fe"
+    apiKey: "AIzaSyB4lhPMeNVpus-P5WmNJjX2gyKRmUCymLE",
+    authDomain: "soundscap-2be11.firebaseapp.com",
+    projectId: "soundscap-2be11",
+    storageBucket: "soundscap-2be11.appspot.com",
+    messagingSenderId: "129869414018",
+    appId: "1:129869414018:web:66759e17fec339e407fe9b"
   }
 };
