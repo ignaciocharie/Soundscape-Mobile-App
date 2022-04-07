@@ -55,15 +55,26 @@ export class SignupPage implements OnInit {
       this.userService.addUser(this.newUser).then((res: any) => {
         loader.dismiss();
         console.log('res', res)
-        this.router.navigate(['login']);
-      }, (err) => {
+      }) .then(() => {
         loader.dismiss();
-        this.presentToast('Please try again \n' + err);
-      });
+        this.toast('Registration Success!', 'danger');
+        this.router.navigate(['/login']);
+      })
+      .catch(error => {
+        loader.dismiss();
+        this.toast(error.message, 'danger');
+      })
     };
   }
+  async toast(message, status)
+  {
+    const toast = await this.toastCtrl.create({
+      message: message,
+      color: status,
+      position: 'top',
+      duration: 2000
+    });
 
-  goBackToLogin() {
-    this.router.navigate(['login']);
+    toast.present();
   }
 }
