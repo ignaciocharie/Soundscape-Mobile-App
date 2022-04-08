@@ -1,33 +1,144 @@
+<ion-header class="ion-no-border">
+   <ion-title>
+     Welcome to Soundscape App
+     </ion-title>
+</ion-header>
+<ion-header class="ion-no-border" style="background:#F4FAF6;">
+     <div class="title-toolbar">
 
-  <ion-content>
-    <ion-grid>
-      <ion-searchbar class="ion-padding"></ion-searchbar>
+       <Strong class="title">Home</Strong> Page   
+   
+   </div>
   
-      <ion-row>
-        <ion-col size="6">
-          <ion-card>
-            <img src="../assets/images/relax.png"/>
-            <ion-button color='light' fill='clear' ></ion-button>
-          </ion-card>
-        </ion-col>
-  
-        <ion-col size="6">
-          <ion-card>
-            <img src="../assets/images/Smiley.png"/>
-            <ion-button color='light' fill='clear' ></ion-button>
-          </ion-card>
-        </ion-col>
+</ion-header>
 
-        
-        <ion-col size="6">
-            <ion-card>
-                <img src="../assets/images/sleep.png"/>
-              <ion-button color='light' fill='clear' ></ion-button>
-            </ion-card>
-          </ion-col>
+<ion-content [fullscreen]="true">
+
+ <div id="container"> 
   
-      </ion-row>
-    </ion-grid>
+   <div class="searchbar">
+     <ion-searchbar placeholder="Find a Music" no-shadow>  
+     </ion-searchbar>
+
+     <!-- Main Featured Section -->
+   
+     <div class="main-featured-songs">
+        <!-- ion slider for the feature Songs -->
+
+      <ion-slides pager="true" [options]="options" (click)="appRating()">
+        <!-- slider one -->
+       <ion-slide>
+         <ion-card class="main-song-card">
+           <ion-card-content>
+           <img src="/assets/images/relax.png" />
+
+           <ion-card-title>
+            Relaxing Musics
+         </ion-card-title> 
+         
+           <ion-card-subtitle>
+            <p>Relaxing Music to help you Sleep</p>             
+          </ion-card-subtitle>
+         
+        </ion-card-content>
+        </ion-card>
+       </ion-slide>
+<!-- Slider two -->
+       <ion-slide>
+         <ion-card class="card-wrapper main-song-card">
+           <ion-card-content>
+           <img src="/assets/images/sleep.png" />
+
+           <ion-card-title>
+             Short Stories
+         </ion-card-title> 
+         
+           <ion-card-subtitle>
+             <p>Calming and Exciting Short Stories<br>
+            For You</p>               
+          </ion-card-subtitle>
+         
+        </ion-card-content>
+        </ion-card>
+       </ion-slide>
+<!-- Slider three -->
+<ion-slide>
+  <ion-card class="card-wrapper main-song-card">
+    <ion-card-content>
+    <img src="/assets/images/Smiley.png" />
+
+    <ion-card-title>
+      8D Musics
+  </ion-card-title> 
+  
+    <ion-card-subtitle>
+      <p>8D Music just for you</p>               
+   </ion-card-subtitle>
+  
+ </ion-card-content>
+ </ion-card>
+</ion-slide>
+
+</ion-slides>
+</div>
+     <!-- display section -->
+   
+     <div class="popular-song-section">
+           
+       <ion-header class="ion-no-border" style="background:#F4FAF6" >
+         <ion-toolbar class="segement-toolbar">
+
+           <ion-segment mode="md"  [(ngModel)]="segment" (ionChange)="segmentChanged($event)"> 
+           <ion-segment-button value="0" style=" min-height:30px;">
+             <ion-label>
+               Popular
+             </ion-label>
+           </ion-segment-button>
+
+           <ion-segment-button value="1" >
+             <ion-label>
+               Stories
+             </ion-label>
+           </ion-segment-button>
+           <ion-segment-button value="2" >
+             <ion-label>
+               Musics
+             </ion-label>
+           </ion-segment-button>
+           </ion-segment>
+
+           <ion-slides pager="false" #slides [options]="sliderOptions" (ionSlideDidChange)="slidesChanged(slides)" (ionSlideDidLoad)="slidesChanged(slides)" style="padding-bottom: 50px;">
+             <ion-slide>
+              
+               <div class="bottomstyle">
+                   <ion-item lines="none">
+                     
+                     <ion-avatar slot="start">
+                       <img src="assets/oranges.png" />
+                       <!-- <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" >  -->
+                     </ion-avatar>
+                     <ion-label>
+                       <h2>Orange Imported (6 Pieces)</h2>
+                           <ion-row>
+                             <ion-icon name="star" color="warning"></ion-icon>
+                             <ion-icon name="star" color="warning"></ion-icon>
+                             <ion-icon name="star" color="warning"></ion-icon>
+                             <ion-icon name="star" color="warning"></ion-icon>
+                           </ion-row>
+ 
+                     
+                     </ion-label>
+                   </ion-item>
+               
+               </div>
+             </ion-slide>
+         </ion-toolbar>
+       </ion-header>
+     </div>
+
+ </div>
+ </div>
+
   </ion-content>
 
   <ion-toolbar id="miniPlayer">

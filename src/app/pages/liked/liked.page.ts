@@ -23,6 +23,12 @@ export class LikedPage implements OnInit {
       img: "../assets/images/relax.png",
       path: "../assets/songs/Raindrops.mp3"
     },
+     {
+      title: "A Wish to the Ocean",
+      subtitle: "Relaxing Sounds",
+      img: "../assets/images/relax.png",
+      path: "../assets/songs/A Wish to the Ocean - Beautiful Piano Song with Calming Sound of the Waves ｜BigRicePiano.mp3"
+    },
     {
       title: "The Lion & Mouse",
       subtitle: "Storytelling",
