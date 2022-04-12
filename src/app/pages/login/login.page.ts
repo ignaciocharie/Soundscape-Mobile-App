@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoadingController, ToastController } from '@ionic/angular';
-import { Iuser } from 'src/app/models/user';
+import { ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 
 
@@ -10,39 +8,36 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-  credentials = {} as Iuser;
+export class LoginPage implements OnInit 
+{
+  email: string;
+  password: string;
+  
   constructor(
-    private router: Router,
-    private authService: AuthService,
-    private loadingCtrl: LoadingController,
-    private toastCtrl: ToastController) { }
+    private auth: AuthService,
+    private toaster: ToastController) { }
 
   ngOnInit() {
   }
 
-  async presentToast(text) {
-    const toast = await this.toastCtrl.create({
-      message: text,
-      duration: 3000,
+  login()
+  {
+    if(this.email && this.password)
+    {
+      this.auth.signIn(this.email, this.password);
+    } else {
+      this.toast('Please enter your email & password!', 'warning');
+    }
+  }
+
+  async toast(message, status) 
+  {
+    const toast = await this.toaster.create({
+      message: message,
+      color: status,
+      position: 'top',
+      duration: 2000
     });
     toast.present();
   }
-
-  async login() {
-    this.authService.login(this.credentials).then((res: any) => {
-      if (!res.code) {
-        this.presentToast('Login Success');
-        this.router.navigate(['/home/music'])
-      }
-    },
-      (err) => {
-        this.presentToast('Please try again \n' + err);
-      });
-  }
-
-  gotoSignUp() {
-    this.router.navigate(['signup']);
-  }
-
 }

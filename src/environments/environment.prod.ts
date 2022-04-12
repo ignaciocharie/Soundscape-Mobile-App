@@ -3,6 +3,7 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyB4lhPMeNVpus-P5WmNJjX2gyKRmUCymLE",
     authDomain: "soundscap-2be11.firebaseapp.com",
+    databaseURL: "https://soundscap-2be11-default-rtdb.firebaseio.com",
     projectId: "soundscap-2be11",
     storageBucket: "soundscap-2be11.appspot.com",
     messagingSenderId: "129869414018",

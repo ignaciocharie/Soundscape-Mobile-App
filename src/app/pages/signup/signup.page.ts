@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { LoadingController, ToastController } from '@ionic/angular';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,65 +11,77 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignupPage implements OnInit {
 
-  newUser = {
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  }
+  name: string;
+  email: string;
+  phone: string;
+  password: string;
+  confirmPassword: string;
+  passwordMatch: boolean;
 
   constructor(
+    private afs: AngularFirestore,
+    private afauth: AngularFireAuth,
     private router: Router,
-    private userService: UserService,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController) { }
+    public toaster: ToastController) { }
 
   ngOnInit() {
   }
 
-  async presentToast(text) {
-    const toast = await this.toastCtrl.create({
-      message: text,
-      duration: 3000,
-    });
-    toast.present();
-  }
-
-  async register() {
-    if (this.newUser.firstname == '' ||
-      this.newUser.lastname == '' ||
-      this.newUser.email == '' ||
-      this.newUser.password == '' ||
-      this.newUser.confirmPassword == '') {
-      this.presentToast('All fields are require');
-    } else if (this.newUser.password !== this.newUser.confirmPassword) {
-      this.presentToast("Passowrd don't match");
-    } else if (this.newUser.password.length < 8) {
-      this.presentToast('Passowrd should have more than 8 characters');
-    } else {
-      let loader = await this.loadingCtrl.create({
-        message: 'Please wait'
+  async register() 
+  {
+    if(this.name && this.phone && this.email && this.password )
+    {
+      const loading = await this.loadingCtrl.create({
+        message: 'processing..',
+        spinner: 'crescent',
+        showBackdrop: true
       });
-      loader.present();
 
-      this.userService.addUser(this.newUser).then((res: any) => {
-        loader.dismiss();
-        console.log('res', res)
-      }) .then(() => {
-        loader.dismiss();
-        this.toast('Registration Success!', 'danger');
-        this.router.navigate(['/login']);
+      loading.present();
+
+      this.afauth.createUserWithEmailAndPassword(this.email, this.password)
+      .then((data) => {
+        data.user.sendEmailVerification();
+        this.afs.collection('users').doc(data.user.uid).set({
+          'userId': data.user.uid,
+          'userName': this.name,
+          'userPhone': this.phone,
+          'userEmail': this.email,
+          'createdAt': Date.now()
+        })
+        .then(() => {
+          loading.dismiss();
+          this.toast('Registration Success! Please Check Your Email!', 'success');
+          this.router.navigate(['/login']);
+        })
+        .catch(error => {
+          loading.dismiss();
+          this.toast(error.message, 'danger');
+        })
       })
       .catch(error => {
-        loader.dismiss();
-        this.toast(error.message, 'danger');
+        loading.dismiss();
+        this.toast(error.message, 'danger')
       })
-    };
+    } else {
+      this.toast('All fields are required!', 'warning');
+    }
   }
+
+  checkPassword()
+  {
+    if(this.password == this.confirmPassword)
+    {
+      this.passwordMatch = true;
+    } else {
+      this.passwordMatch = false;
+    }
+  }
+
   async toast(message, status)
   {
-    const toast = await this.toastCtrl.create({
+    const toast = await this.toaster.create({
       message: message,
       color: status,
       position: 'top',
