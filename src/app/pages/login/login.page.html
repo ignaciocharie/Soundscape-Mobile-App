@@ -4,11 +4,12 @@
     <app-logo></app-logo>
     <h1>Sign In</h1>
   </div>
-
+ 
+  <ion-card>
     <ion-list>
       <ion-item>
         <ion-label position="stacked">Email</ion-label>
-        <ion-input type='text' [(ngModel)]="credentials.email"></ion-input>
+        <ion-input type='email' [(ngModel)]="credentials.email"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -21,9 +22,12 @@
         <ion-text color="light">Login</ion-text>
       </ion-button>
     
-      <ion-label class="ion-text-center">
+      <ion-label class="ion-text-center" style="padding: 20px;">
         Don't have Account?<a routerLink='/signup'>Sign Up</a>
+        <div linespace1></div>
+        <p><a routerLink='/forgot-password'>Forgot password?</a> </p>
       </ion-label>
 
     </ion-list>
+    </ion-card>
 </ion-content>

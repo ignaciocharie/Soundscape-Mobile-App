@@ -14,22 +14,28 @@ export class LikedPage implements OnInit {
     {
       title: "Believer",
       subtitle: "Imagine Dragons",
-      img: "../assets/images/Smiley.png",
+      img: "../assets/images/sleep.png",
       path: "../assets/songs/Believer.mp3"
-    },
-    {
-      title: "Raindrops",
-      subtitle: "Relaxing Sounds",
-      img: "../assets/images/relax.png",
-      path: "../assets/songs/Raindrops.mp3"
-    },
+    }
+  ];
+
+  storys = [
     {
       title: "The Lion & Mouse",
       subtitle: "Storytelling",
-      img: "../assets/images/sleep.png",
+      img: "../assets/images/Smiley.png",
       path: "../assets/songs/Storytime.mp3"
-    }
+    },
+  ];
 
+  relaxing = [
+    {
+        title: "Raindrops",
+        subtitle: "Relaxing Sounds",
+        img: "../assets/images/relax.png",
+        path: "../assets/songs/Raindrops.mp3"
+    
+    }
   ];
 
   currTitle;

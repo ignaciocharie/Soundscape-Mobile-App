@@ -5,30 +5,31 @@
     <h1>Create Account</h1>
   </div> 
 
+  <ion-card>
   <ion-list>
     <ion-item>
       <ion-label position="stacked">Firstname</ion-label>
-  <ion-input type="text" [(ngModel)]="newUser.firstname"></ion-input>
+  <ion-input required type="text" [(ngModel)]="newUser.firstname"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Lastname</ion-label>
-  <ion-input type="text" [(ngModel)]="newUser.lastname"></ion-input>
+  <ion-input required type="text" [(ngModel)]="newUser.lastname"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Email</ion-label>
-  <ion-input type="text" [(ngModel)]="newUser.email"></ion-input>
+  <ion-input required type="email" [(ngModel)]="newUser.email"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Password</ion-label>
-  <ion-input type="password" [(ngModel)]="newUser.password"></ion-input>
+  <ion-input required type="password" [(ngModel)]="newUser.password"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Confirm Password</ion-label>
-  <ion-input type="password" [(ngModel)]="newUser.confirmPassword"></ion-input>
+  <ion-input required type="password" [(ngModel)]="newUser.confirmPassword"></ion-input>
   </ion-item>
 
   <div linespace></div>
@@ -36,9 +37,10 @@
     <ion-text color="light">Register</ion-text>
   </ion-button>
 
-  <ion-label class="ion-text-center">
+  <ion-label class="ion-text-center" style="padding: 20px;">
     Already have an account?<a routerLink='/login'>Sign In</a>
   </ion-label>
 </ion-list>
+</ion-card>
 </ion-content>
 

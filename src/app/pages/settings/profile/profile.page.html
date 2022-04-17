@@ -4,32 +4,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">   
 
-  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-label position="floating">Name</ion-label>
-      <ion-input type="text" formControlName="name"></ion-input>
-    </ion-item>
+  <ion-card>
+<form>
+<ion-list>
+  <ion-item>
+  <ion-label position="stacked">Fullname</ion-label>
+  <ion-input required type="text" [(ngModel)]="name" name="name"></ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input type="text" formControlName="username"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Phone#</ion-label>
+  <ion-input required type="tel" [(ngModel)]="phone" name="phone"></ion-input>
+  </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Password</ion-label>
-      <ion-input type="password" formControlName="password"></ion-input>
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+  <ion-input required type="email" [(ngModel)]="email" name="email"></ion-input>
+  </ion-item>
 
-    <div linespace></div>
-    <ion-grid>
-      <ion-row class="ion-align-items-center">
-        <ion-col class="ion-text-center">
-          <ion-button type="submit" shape="round" color='light' expand="block">Save</ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </form>
+  <div linespace></div>
+  <ion-button class="submit" expand="block" color='dark' fill="solid" shape='round' (click)="updateProfile()">
+    <ion-text color="light">Update</ion-text>
+  </ion-button>
+</ion-list>
+</form>
+  </ion-card>
 
 </ion-content>

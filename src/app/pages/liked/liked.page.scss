@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody&family=Poppins:wght@200;500&display=swap');
 *{
   font-weight: bold;
+}
+
+ion-content {
+  --ion-background-color: #D8CAFF;
+}
+
+h1{
+  text-align: center;
+  font-family: 'Anybody', cursive;
+}
+ion-card{
+  p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+  }
 }
 
 ion-item{
@@ -9,15 +26,12 @@ ion-item{
     }
   }
   ion-label {
-    h2,
+    h1,
     p {
       font-weight: bold;
+      font-family: 'Poppins', sans-serif;
     }
   }
-}
-ion-list-header{
-  font-size: 17px;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #miniPlayer {
