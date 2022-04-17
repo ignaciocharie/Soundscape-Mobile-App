@@ -12,10 +12,22 @@ export class MusicPage implements OnInit {
 
   songs = [
     {
-      title: "Believer",
-      subtitle: "Imagine Dragons",
+      title: "Rockabye Baby",
+      subtitle: "Luallaby",
       img: "../assets/images/sleep.png",
-      path: "../assets/songs/Believer.mp3"
+      path: "../assets/songs/Luallaby/Rockabye.mp3"
+    },
+    {
+      title: "You are my Sunshine",
+      subtitle: "Luallaby",
+      img: "../assets/images/sleep.png",
+      path: "../assets/songs/Luallaby/Sunshine.mp3"
+    },
+    {
+      title: "Twinkle twinkle little star",
+      subtitle: "Luallaby",
+      img: "../assets/images/sleep.png",
+      path: "../assets/songs/Luallaby/Twinkle.mp3"
     }
   ];
 
@@ -24,18 +36,42 @@ export class MusicPage implements OnInit {
       title: "The Lion & Mouse",
       subtitle: "Storytelling",
       img: "../assets/images/Smiley.png",
-      path: "../assets/songs/Storytime.mp3"
+      path: "../assets/songs/story/Storytime.mp3"
     },
+    {
+      title: "The Red Fish & Shark Gang",
+      subtitle: "Storytelling",
+      img: "../assets/images/Smiley.png",
+      path: "../assets/songs/story/Redfish.mp3"
+    },
+    {
+      title: "The Magic Pot",
+      subtitle: "Storytelling",
+      img: "../assets/images/Smiley.png",
+      path: "../assets/songs/story/magicpot.mp3"
+    }
   ];
 
   relaxing = [
     {
         title: "Raindrops",
-        subtitle: "Relaxing Sounds",
+        subtitle: "Nature Sounds",
         img: "../assets/images/relax.png",
-        path: "../assets/songs/Raindrops.mp3"
+        path: "../assets/songs/relaxing/Raindrops.mp3"
     
-    }
+    },
+    {
+      title: "Forest",
+      subtitle: "Nature Sounds",
+      img: "../assets/images/relax.png",
+      path: "../assets/songs/relaxing/Forest.mp3"
+  },
+  {
+    title: "Calm",
+    subtitle: "Meditation Sounds",
+    img: "../assets/images/relax.png",
+    path: "../assets/songs/relaxing/meditation.mp3"
+}
   ];
   
   currTitle;
