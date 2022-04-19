@@ -12,11 +12,25 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginPage implements OnInit {
   credentials = {} as Iuser;
+
+  showPassword = false;
+  passwordToggleIcon = 'eye';
+  
   constructor(
     private router: Router,
     private authService: AuthService,
     private loadingCtrl: LoadingController,
     private toastCtrl: ToastController) { }
+
+    togglePassword(): void {
+      this.showPassword = !this.showPassword;
+
+      if(this.passwordToggleIcon == 'eye') {
+        this.passwordToggleIcon = 'eye-off';
+      } else {
+        this.passwordToggleIcon = 'eye';
+      }
+    }
 
   ngOnInit() {
   }
