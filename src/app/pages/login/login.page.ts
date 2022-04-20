@@ -12,10 +12,23 @@ export class LoginPage implements OnInit
 {
   email: string;
   password: string;
+
+  showPassword = false;
+  passwordToggleIcon = 'eye';
   
   constructor(
     private auth: AuthService,
     private toaster: ToastController) { }
+
+    togglePassword(): void {
+      this.showPassword = !this.showPassword;
+
+      if(this.passwordToggleIcon == 'eye') {
+        this.passwordToggleIcon = 'eye-off';
+      } else {
+        this.passwordToggleIcon = 'eye';
+      }
+    }
 
   ngOnInit() {
   }
@@ -25,6 +38,7 @@ export class LoginPage implements OnInit
     if(this.email && this.password)
     {
       this.auth.signIn(this.email, this.password);
+      this.toast('Welcome to Soundscape!', 'danger');
     } else {
       this.toast('Please enter your email & password!', 'warning');
     }

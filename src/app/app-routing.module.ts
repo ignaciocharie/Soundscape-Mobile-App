@@ -29,11 +29,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
   {
-    path: 'change-password',
-    loadChildren: () => import('./pages/change-password/change-password.module').then( m => m.ChangePasswordPageModule),
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'profile',
     loadChildren: () => import('./pages/settings/profile/profile.module').then( m => m.ProfilePageModule),
     canActivate: [AuthGuard]
