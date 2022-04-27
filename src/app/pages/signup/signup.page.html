@@ -30,7 +30,7 @@
   <ion-item>
     <ion-label position="stacked">Confirm Password</ion-label>
   <ion-input required type="password" [(ngModel)]="confirmPassword" (ionChange)="checkPassword()"></ion-input>
-  <ion-text *ngIf="password && !passwordMatch" color="warning">Password don't match!</ion-text>
+  <ion-text *ngIf="password && !passwordMatch" color="danger">Password don't match!</ion-text>
   <ion-text *ngIf="password && passwordMatch" color="success">Password match!</ion-text>
   </ion-item>
   
