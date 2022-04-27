@@ -38,7 +38,7 @@ export class LoginPage implements OnInit
     if(this.email && this.password)
     {
       this.auth.signIn(this.email, this.password);
-      this.toast('Welcome to Soundscape!', 'danger');
+      this.toast('Welcome to Soundscape!', 'primary');
     } else {
       this.toast('Please enter your email & password!', 'warning');
     }

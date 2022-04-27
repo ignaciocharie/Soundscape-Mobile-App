@@ -96,7 +96,7 @@
 <!-- Minimize Icon -->
 <ion-toolbar color="medium">
 <ion-buttons slot="end" color="medium">
-  <ion-button (click)="minimize()" color="danger">
+  <ion-button (click)="minimize()" color="primary">
     <svg style="width: 24px;height: 24px" viewBox="0 0 24 24" slot="icon-only">
       <path fill="currentColor" d="M16.59,5.59L18,7L12,13L6,7L7.41,5.59L12,10.17L16.59,5.59M16.59,11.59L18,13L12,19L6,13L7.41,11.59L12,16.17L16.59,11.59Z"></path>
     </svg>
@@ -113,7 +113,7 @@
 </p>
 
 <ion-item lines="none">
-<ion-range #range (touchmove)="touchMove()" color="danger" (touchend)="(touchEnd)" (touchstart)="(touchStart)" max="{{maxRangeValue}}" [(ngModel)]="currRangeTime">
+<ion-range #range (touchmove)="touchMove()" color="primary" (touchend)="(touchEnd)" (touchstart)="(touchStart)" max="{{maxRangeValue}}" [(ngModel)]="currRangeTime">
   <ion-label slot="start">
     <ion-text>
       <b>
@@ -133,23 +133,23 @@
 </ion-item>
 
 <!-- Play Previous Button -->
-<ion-button color="danger" fill="clear" mode="ios" (click)="playPrev()">
-<ion-icon name="play-skip-back-outline" color="danger" style="font-size: 30px;"></ion-icon>
+<ion-button color="primary" fill="clear" mode="ios" (click)="playPrev()">
+<ion-icon name="play-skip-back-outline" color="primary" style="font-size: 30px;"></ion-icon>
 </ion-button>
 
 <!-- Play Button -->
-<ion-button color="danger" fill="clear" mode="ios" *ngIf="!isPlaying" click="play()">
-<ion-icon name="play" color="danger" style="font-size: 40px;"></ion-icon>
+<ion-button color="primary" fill="clear" mode="ios" *ngIf="!isPlaying" click="play()">
+<ion-icon name="play" color="primary" style="font-size: 40px;"></ion-icon>
 </ion-button>
 
 <!-- Pause Button -->
-<ion-buton color="danger" fill="clear" mode="ios" *ngIf="isPlaying" (click)="pause()">
-<ion-icon name="pause" color="danger" style="font-size: 40px;"></ion-icon>
-</ion-buton>
+<ion-button color="primary" fill="clear" mode="ios" *ngIf="isPlaying" (click)="pause()">
+<ion-icon name="pause"  style="font-size: 40px;"></ion-icon>
+</ion-button>
 
 <!-- Play Next Button -->
-<ion-button color="danger" fill="clear" mode="ios" (click)="playNext()">
-<ion-icon name="play-skip-forward-outline" color="danger" style="font-size: 30px;"></ion-icon>
+<ion-button color="primary" fill="clear" mode="ios" (click)="playNext()">
+<ion-icon name="play-skip-forward-outline" color="primary" style="font-size: 30px;"></ion-icon>
 </ion-button>
 
 <ion-list-header>
@@ -185,15 +185,15 @@ Up Next
     </p>
   </ion-label>
   <!-- Play Button -->
-  <ion-button color="danger" (click)="play()" mode="ios" fill="clear" *ngIf="!isPlaying">
+  <ion-button color="primary" (click)="play()" mode="ios" fill="clear" *ngIf="!isPlaying">
     <ion-icon name="play" style="font-size: x-large;"></ion-icon>
   </ion-button>
   <!-- Pause Button -->
-  <ion-button color="danger" (click)="pause()" mode="ios" fill="clear" *ngIf="!isPlaying">
+  <ion-button color="primary" (click)="pause()" mode="ios" fill="clear" *ngIf="!isPlaying">
     <ion-icon name="pause" style="font-size: x-large;"></ion-icon>
   </ion-button>
   <!-- Cancel Button -->
-  <ion-button color="danger" (click)="cancel()" mode="ios" fill="clear">
+  <ion-button color="primary" (click)="cancel()" mode="ios" fill="clear">
     <ion-icon name="close" style="font-size: x-large;"></ion-icon>
   </ion-button>
 </ion-item>

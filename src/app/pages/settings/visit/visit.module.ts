@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ReviewPageRoutingModule } from './review-routing.module';
+import { VisitPageRoutingModule } from './visit-routing.module';
 
-import { ReviewPage } from './review.page';
+import { VisitPage } from './visit.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { ReviewPage } from './review.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    ReviewPageRoutingModule
+    VisitPageRoutingModule
   ],
-  declarations: [ReviewPage]
+  declarations: [VisitPage]
 })
-export class ReviewPageModule {}
+export class VisitPageModule {}

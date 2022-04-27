@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LikedPageRoutingModule } from './liked-routing.module';
+import { MusicListPageRoutingModule } from './music-list-routing.module';
 
-import { LikedPage } from './liked.page';
+import { MusicListPage } from './music-list.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LikedPageRoutingModule
+    MusicListPageRoutingModule
   ],
-  declarations: [LikedPage]
+  declarations: [MusicListPage]
 })
-export class LikedPageModule {}
+export class MusicListPageModule {}

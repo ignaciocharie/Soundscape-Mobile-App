@@ -234,9 +234,4 @@ export class MusicPage implements OnInit {
       this.currSong.play();
     }
   }
-  
-  stoTime(t) {
-    return this.padZero(parseInt(String((t / (60)) % 60))) + "+" +
-    this.padZero(parseInt(String((t) % 60)));
-  }
   }

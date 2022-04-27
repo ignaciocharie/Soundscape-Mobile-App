@@ -1,14 +1,18 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <ion-title>Contact Us</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <p>If you have suggestions or feedback you think would benefit the app, please reach out to us at our email address:
-    contact@soundscape.com</p>
+    soundscape.mobileapp@gmail.com</p>
 
   <p>For inquiries and troubleshooting messages, please reach out to us at this email address:
     support@soundscape.com</p>
+
+    <div class="ion-padding">
+      <ion-button (click)="OpenEmailComposer()">Send Message</ion-button>
+    </div>
 
 </ion-content>

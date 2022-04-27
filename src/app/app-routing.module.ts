@@ -41,7 +41,11 @@ const routes: Routes = [
   {
     path: '**',
     loadChildren: () => import('./pages/page-not-found/page-not-found.module').then( m => m.PageNotFoundPageModule)
+  },  {
+    path: 'music-list',
+    loadChildren: () => import('./pages/music-list/music-list.module').then( m => m.MusicListPageModule)
   },
+
 ];
 
 @NgModule({

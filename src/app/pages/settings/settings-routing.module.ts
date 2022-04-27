@@ -34,8 +34,8 @@ const routes: Routes = [
     loadChildren: () => import('./notifications/notifications.module').then( m => m.NotificationsPageModule)
   },
   {
-    path: 'review',
-    loadChildren: () => import('./review/review.module').then( m => m.ReviewPageModule)
+    path: 'visit',
+    loadChildren: () => import('./visit/visit.module').then( m => m.VisitPageModule)
   },
   {
     path: 'profile-edit',

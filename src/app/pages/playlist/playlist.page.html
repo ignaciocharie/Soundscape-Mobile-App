@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="dark">
+<ion-title> My Playlist </ion-title>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items | async">
+      <audio controls slot="end" *ngIf="item.audioUrl">
+        <source [src]="item.audioUrl" alt="">
+      </audio>
+      <ion-label>{{ item.title }}</ion-label>
+      <ion-button slot="end" fill="clear" color="danger" (click)="remove(item)">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Add new Song</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form class="ion-padding" (submit)="addSong()">
+        <ion-item>
+          <ion-label position="stacked">Add New</ion-label>
+          <ion-input required name="song" [(ngModel)]="newSong" placeholder="Song"></ion-input>
+        </ion-item>
+
+    <ion-item lines="none">
+      <input type="file" name="inputFile" (change)="chooseFile($event)" required>
+    </ion-item>
+    
+    <ion-button type="submit">Add</ion-button>
+    </form>
+    </ion-card-content>
+  </ion-card>
+
+
+  </ion-content>
