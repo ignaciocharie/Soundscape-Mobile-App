@@ -7,13 +7,13 @@
 <ion-card>
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Email</ion-label>
-        <ion-input type='email' [(ngModel)]="email" name="email"></ion-input>
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-input type='email' [(ngModel)]="email" name="email" placeholder="Email Address"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Password</ion-label>
-        <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password"></ion-input>
+        <ion-icon name="lock-closed"></ion-icon>
+        <ion-input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" placeholder="Password"></ion-input>
         <ion-icon slot="end" [name]="passwordToggleIcon" color="light" (click)="togglePassword()"></ion-icon>
       </ion-item>
 
