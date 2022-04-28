@@ -43,7 +43,7 @@ export class SignupPage implements OnInit {
       this.afauth.createUserWithEmailAndPassword(this.email, this.password)
       .then((data) => {
         data.user.sendEmailVerification();
-        this.afs.collection('users').doc(data.user.uid).set({
+        this.afs.collection('user').doc(data.user.uid).set({
           'userId': data.user.uid,
           'userName': this.name,
           'userPhone': this.phone,

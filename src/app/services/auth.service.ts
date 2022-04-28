@@ -27,7 +27,7 @@ export class AuthService {
         switchMap( user => {
           if(user)
           {
-            this.afs.doc('users/${user.uid}').valueChanges();
+            return this.afs.doc<User>(`user/${user.uid}`).valueChanges();
           } else {
             return of(null);
           }

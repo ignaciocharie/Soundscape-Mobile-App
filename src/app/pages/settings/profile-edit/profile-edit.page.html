@@ -24,12 +24,13 @@
   <ion-input required type="email" [(ngModel)]="email" name="email"></ion-input>
   </ion-item>
 
-  <div linespace></div>
-  <ion-button class="submit" expand="block" color='dark' fill="solid" shape='round' (click)="updateProfile()">
-    <ion-text color="light">Update</ion-text>
-  </ion-button>
 </ion-list>
 </form>
   </ion-card>
+
+  <div linespace></div>
+  <ion-button class="submit" expand="block" shape='round' color='dark' (click)="updateProfile()">
+    <ion-text color="light">Update</ion-text>
+  </ion-button>
 
 </ion-content>
