@@ -8,10 +8,17 @@ ion-content {
 }
 
 [linespace]{
-    height: 10px;
+  height: 30px;
+  background-color: #D8CAFF;
 }
 
 ion-button {
     padding-left: 20%;
     padding-right: 20%;
   }
+
+  img {
+    width: 100px;
+    margin-left: 35%;
+    margin-bottom: 10%;
+}
