@@ -38,7 +38,7 @@
       <audio controls *ngIf="item.audioUrl">
         <source [src]="item.audioUrl" alt="">
       </audio></div>
-      <ion-button slot="end" fill="clear" color="danger" (click)="remove(item)">
+      <ion-button fill="clear" color="danger" (click)="remove(item)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
     </ion-item>
