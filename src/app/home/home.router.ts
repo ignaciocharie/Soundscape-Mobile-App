@@ -16,10 +16,10 @@ const routes: Routes = [
           )
       },
       {
-        path: 'liked',
+        path: 'playlist',
         loadChildren: () =>
-          import('../pages/liked/liked.module').then(
-            m => m.LikedPageModule
+          import('../pages/playlist/playlist.module').then(
+            m => m.PlaylistPageModule
           )
       },
       {
