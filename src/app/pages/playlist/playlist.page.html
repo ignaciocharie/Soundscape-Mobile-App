@@ -38,7 +38,7 @@
       <audio controls *ngIf="item.audioUrl">
         <source [src]="item.audioUrl" alt="">
       </audio></div>
-      <ion-button fill="clear" color="danger" (click)="remove(item)">
+      <ion-button slot="end" fill="clear" color="danger" (click)="remove(item)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
     </ion-item>
@@ -77,7 +77,7 @@
       <audio controls *ngIf="list.musicUrl">
         <source [src]="list.musicUrl" alt="">
       </audio></div>
-      <ion-button fill="clear" color="danger" (click)="removes(list)">
+      <ion-button slot="end" fill="clear" color="danger" (click)="removes(list)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
     </ion-item>
@@ -116,7 +116,7 @@
       <audio controls *ngIf="play.songUrl">
         <source [src]="play.songUrl" alt="">
       </audio></div>
-      <ion-button fill="clear" color="danger" (click)="removess(play)">
+      <ion-button slot="end" fill="clear" color="danger" (click)="removess(play)">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
     </ion-item>
