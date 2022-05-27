@@ -43,4 +43,9 @@ ion-item{
     }
   }
 }
-
+.swiper-slide-active{
+  transform: scale(1.05, 1.05);
+}
+.swiper-slide {
+  transition: 400ms all ease-in-out;
+}
